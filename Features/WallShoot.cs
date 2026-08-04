@@ -18,7 +18,7 @@ internal class WallShoot : ToggleFeature
 #pragma warning disable IDE0060
 	[UsedImplicitly]
 	[SuppressMessage("ReSharper", "InconsistentNaming")]
-	protected static bool IsPenetratedPrefix(EftBulletClass shot, Vector3 hitPoint, BallisticCollider __instance, ref bool __result)
+	protected static bool IsPenetratedPrefix(Shot shot, Vector3 hitPoint, BallisticCollider __instance, ref bool __result)
 	{
 		var feature = FeatureFactory.GetFeature<WallShoot>();
 		if (feature == null || !feature.Enabled)

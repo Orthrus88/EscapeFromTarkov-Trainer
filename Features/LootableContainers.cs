@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Comfort.Common;
 using EFT.Interactive;
+using EFT.InventoryLogic;
 using EFT.Trainer.Configuration;
 using EFT.Trainer.Extensions;
 using EFT.Trainer.Properties;
@@ -72,7 +73,7 @@ internal class LootableContainers : PointOfInterests
 				AddRecord(rootItem.TemplateId.LocalizedShortName(), owner.Value.Transform.position, data);
 
 			if (ShowCorpses && rootItem.TemplateId == KnownTemplateIds.DefaultInventory
-							&& itemOwner is TraderControllerClass { Name: nameof(Corpse) }) // only display dead bodies
+							&& itemOwner is ItemController { Name: nameof(Corpse) }) // only display dead bodies
 				AddRecord(nameof(Corpse), owner.Value.Transform.position, data);
 		}
 	}

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using EFT.Ballistics;
 using EFT.HealthSystem;
 using EFT.Trainer.Configuration;
 using EFT.Trainer.Extensions;
@@ -45,10 +46,10 @@ internal class Hits : ToggleFeature
 	public bool ShowHealthDamage { get; set; } = true;
 
 
-	internal class HitMarker(DamageInfoStruct damageInfo)
+	internal class HitMarker(DamageInfo damageInfo)
 	{
 		public float ElapsedTime { get; set; } = 0.0f;
-		public DamageInfoStruct DamageInfo { get; set; } = damageInfo;
+		public DamageInfo DamageInfo { get; set; } = damageInfo;
 		public bool IsTaggedForDeletion { get; set; } = false;
 	}
 
@@ -57,7 +58,7 @@ internal class Hits : ToggleFeature
 #pragma warning disable IDE0060
 	[UsedImplicitly]
 	[SuppressMessage("ReSharper", "InconsistentNaming")]
-	protected static void ApplyDamagePostfix(EBodyPart bodyPart, float damage, DamageInfoStruct damageInfo, ActiveHealthController? __instance)
+	protected static void ApplyDamagePostfix(EBodyPart bodyPart, float damage, DamageInfo damageInfo, ActiveHealthController? __instance)
 	{
 		var feature = FeatureFactory.GetFeature<Hits>();
 		if (feature == null || !feature.Enabled)

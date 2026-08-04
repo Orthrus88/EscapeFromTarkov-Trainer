@@ -8,7 +8,6 @@ using System.Net.Http;
 using System.Net.Security;
 using System.Runtime.Versioning;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
 using Installer.Properties;
@@ -43,6 +42,7 @@ internal sealed class InstallCommand : AsyncCommand<InstallCommand.Settings>
 		[Description("Language.")]
 		[CommandOption("-l|--language")]
 		public string Language { get; set; } = "";
+
 	}
 
 	public static string[] ToSourceFile(string[]? names, string folder)
@@ -52,7 +52,7 @@ internal sealed class InstallCommand : AsyncCommand<InstallCommand.Settings>
 	}
 
 	[SupportedOSPlatform("windows")]
-	public override async Task<int> ExecuteAsync(CommandContext commandContext, Settings settings, CancellationToken ct)
+	public override async Task<int> ExecuteAsync(CommandContext commandContext, Settings settings)
 	{
 		try
 		{
@@ -74,7 +74,7 @@ internal sealed class InstallCommand : AsyncCommand<InstallCommand.Settings>
 				if (installation.UsingSptButNeverRun)
 					AnsiConsole.MarkupLine("[yellow]Warning: it seems that you have never run your SPT installation. You should quit now and rerun this installer once it's done.[/]");
 
-				if (!await AnsiConsole.ConfirmAsync("Continue installation (yes I have run the game at least once) ?", cancellationToken: ct))
+				if (!await AnsiConsole.ConfirmAsync("Continue installation (yes I have run the game at least once) ?"))
 					return (int)ExitCode.Canceled;
 			}
 

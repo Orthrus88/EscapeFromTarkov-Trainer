@@ -78,7 +78,7 @@ internal class Aimbot : HoldFeature
 
 	[UsedImplicitly]
 	[SuppressMessage("ReSharper", "InconsistentNaming")]
-	protected static bool ApplyShotPrefix(DamageInfoStruct damageInfo, EBodyPart bodyPartType, EBodyPartColliderType colliderType, EArmorPlateCollider armorPlateCollider, object shotId, Player? __instance)
+	protected static bool ApplyShotPrefix(DamageInfo damageInfo, EBodyPart bodyPartType, EBodyPartColliderType colliderType, EArmorPlateCollider armorPlateCollider, object shotId, Player? __instance)
 	{
 		var feature = FeatureFactory.GetFeature<Aimbot>();
 		if (feature == null || !feature.SilentAim || feature._silentAimTarget == null)
@@ -100,11 +100,11 @@ internal class Aimbot : HoldFeature
 
 		// Taken from SPT-BetterZeroing, credits to ehaugw
 		// Use the loaded ammo for elevation adjustment calculations rather than a weapon's default ammo
-		if (__instance?.GetCurrentMagazine() is { } mag && mag.FirstRealAmmo() is AmmoItemClass { AmmoTemplate: { } magazineTemplate })
+		if (__instance?.GetCurrentMagazine() is { } mag && mag.FirstRealAmmo() is Ammo { AmmoTemplate: { } magazineTemplate })
 		{
 			ammoTemplate = magazineTemplate;
 		}
-		else if (__instance?.Chambers is { Length: > 0 } slots && slots[0]?.ContainedItem is AmmoItemClass { AmmoTemplate: { } chamberedTemplate })
+		else if (__instance?.Chambers is { Length: > 0 } slots && slots[0]?.ContainedItem is Ammo { AmmoTemplate: { } chamberedTemplate })
 		{
 			ammoTemplate = chamberedTemplate;
 		}

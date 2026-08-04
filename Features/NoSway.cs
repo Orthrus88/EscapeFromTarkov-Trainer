@@ -32,7 +32,7 @@ internal class NoSway : ToggleFeature
 
 		weaponAnimation.Breath.Intensity = 0;
 		weaponAnimation.Walk.Intensity = 0;
-		weaponAnimation.Shootingg.AimingConfiguration_0.AimProceduralIntensity = 0;
+		weaponAnimation.Shootingg.AimingConfig.AimProceduralIntensity = 0;
 		weaponAnimation.ForceReact.Intensity = 0;
 		weaponAnimation.WalkEffectorEnabled = false;
 	}

@@ -17,10 +17,10 @@ internal class TemplateHelper
 	private static void UpdateTemplates()
 	{
 #if !EFT_LIVE
-		if (!Singleton<ItemFactoryClass>.Instantiated)
+		if (!Singleton<ItemFactory>.Instantiated)
 			return;
 
-		var mongoTemplates = Singleton<ItemFactoryClass>
+		var mongoTemplates = Singleton<ItemFactory>
 			.Instance
 			.ItemTemplates;
 
