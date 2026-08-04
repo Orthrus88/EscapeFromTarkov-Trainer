@@ -24,7 +24,7 @@ internal class VersionChecker
 				return supported;
 
 			var branch = $"dev-{version}";
-			var uri = new Uri($"https://github.com/sailro/EscapeFromTarkov-Trainer/tree/{branch}");
+			var uri = new Uri($"https://github.com/Orthrus88/EscapeFromTarkov-Trainer/tree/{branch}");
 			var result = await _client.GetAsync(uri);
 			_versions[version] = result.IsSuccessStatusCode;
 		}
