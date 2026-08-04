@@ -18,7 +18,7 @@ internal class Ammunition : ToggleFeature
 	public override bool Enabled { get; set; } = false;
 
 	[UsedImplicitly]
-	private static void ShootPostfix(EftBulletClass shot)
+	private static void ShootPostfix(Shot shot)
 	{
 		var feature = FeatureFactory.GetFeature<Ammunition>();
 		if (feature == null || !feature.Enabled)
@@ -38,7 +38,7 @@ internal class Ammunition : ToggleFeature
 		var magazine = weapon.GetCurrentMagazine();
 		if (magazine != null)
 		{
-			if (magazine is CylinderMagazineItemClass cylinderMagazine)
+			if (magazine is CylinderMagazine cylinderMagazine)
 			{
 				// Rhino case
 				foreach (var slot in cylinderMagazine.Camoras)
@@ -60,11 +60,11 @@ internal class Ammunition : ToggleFeature
 
 	private static Item CreateAmmo(Item ammo)
 	{
-		var instantiated = Singleton<ItemFactoryClass>.Instantiated;
+		var instantiated = Singleton<ItemFactory>.Instantiated;
 		if (!instantiated)
 			return ammo;
 
-		var instance = Singleton<ItemFactoryClass>.Instance;
+		var instance = Singleton<ItemFactory>.Instance;
 		var itemId = Guid.NewGuid().ToString("N").Substring(0, 24);
 		return instance.CreateItem(itemId, ammo.TemplateId, null) ?? ammo;
 	}
@@ -73,7 +73,7 @@ internal class Ammunition : ToggleFeature
 	{
 		HarmonyPatchOnce(harmony =>
 		{
-			HarmonyPostfix(harmony, typeof(BallisticsCalculator), nameof(BallisticsCalculator.Shoot), nameof(ShootPostfix), [typeof(EftBulletClass)]);
+			HarmonyPostfix(harmony, typeof(BallisticsCalculator), nameof(BallisticsCalculator.Shoot), nameof(ShootPostfix), [typeof(Shot)]);
 		});
 	}
 }

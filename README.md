@@ -3,15 +3,11 @@
 
 [![Sponsor](https://img.shields.io/badge/sponsor-%E2%9D%A4-lightgrey?logo=github&style=flat-square)](https://github.com/sponsors/sailro)
 
-# This project has been discontinued
-> After 5 years of proud service, this project has been discontinued. With the release of version 1.0 and, above all, the switch to IL2CPP technology, internal modding is going to be completely different (and much more complex).
-> It has been really interesting to find techniques for modding the game, compiling on the go and allowing features to be added easily. Thanks !
-
 *I'm not responsible for any consequences that result from using this code. BattleState / BattlEye will ban you if you try to use it 'live'. Use it safely offline with [SPT](https://sp-tarkov.com/).*
 
 ***TLDR => Use the [Universal Installer](https://github.com/sailro/EscapeFromTarkov-Trainer/releases).*** Default key for in-game GUI is `Right-Alt`.
 
-`master` branch can build against `EFT 0.16.9.40087` (tested with [`SPT Version 4.0.4`](https://hub.sp-tarkov.com/files/file/16-spt/#versions)). If you are looking for another version, see [`branches`](https://github.com/sailro/EscapeFromTarkov-Trainer/branches) and [`releases`](https://github.com/sailro/EscapeFromTarkov-Trainer/releases).
+`master` branch can build against `EFT 0.16.9.40743` (tested with [`SPT Version 4.1.1`](https://hub.sp-tarkov.com/files/file/16-spt/#versions)). If you are looking for another version, see [`branches`](https://github.com/sailro/EscapeFromTarkov-Trainer/branches) and [`releases`](https://github.com/sailro/EscapeFromTarkov-Trainer/releases).
 
 > If you want to compile the code yourself, make sure you cleaned-up your solution properly after upgrading your EFT/sptarkov bits (even removing `bin` and `obj` folders) and check all your references.
 

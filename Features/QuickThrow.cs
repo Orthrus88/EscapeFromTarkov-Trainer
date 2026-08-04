@@ -29,7 +29,7 @@ internal class QuickTrow : TriggerFeature
 
 		var grenade = inventory
 			.GetPlayerItems(EPlayerItems.Equipment)
-			.OfType<ThrowWeapItemClass>()
+			.OfType<ThrowWeap>()
 			.FirstOrDefault();
 
 		if (grenade == null)

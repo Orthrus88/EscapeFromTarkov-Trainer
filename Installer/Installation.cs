@@ -143,8 +143,11 @@ internal class Installation
 			if (!Directory.Exists(installation.Managed))
 				return false;
 
-			// Starting with 4.0.0, folder layout changed
-			installation.UsingSpt = Directory.Exists(Path.Combine(path, "SPT_Data")) || Directory.Exists(Path.Combine(path, "SPT", "SPT_Data"));
+			// SPT 4.0 used SPT_Data; SPT 4.1 renamed the runtime directory to SPT_Runtime.
+			installation.UsingSpt = Directory.Exists(Path.Combine(path, "SPT_Data"))
+				|| Directory.Exists(Path.Combine(path, "SPT_Runtime"))
+				|| Directory.Exists(Path.Combine(path, "SPT", "SPT_Data"))
+				|| Directory.Exists(Path.Combine(path, "SPT", "SPT_Runtime"));
 
 
 			var battleye = Path.Combine(path, "BattlEye");

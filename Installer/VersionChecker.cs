@@ -10,7 +10,6 @@ namespace Installer;
 
 internal class VersionChecker
 {
-
 	private static readonly Dictionary<Version, bool> _versions = [];
 	private static readonly HttpClient _client = new();
 	private static readonly SemaphoreSlim _semaphore = new(1, 1);
