@@ -15,7 +15,7 @@ This is an universal installer for the trainer. In most cases you just need to r
 
 ## 2- It will download the latest source code from this repository.
 - Then will try to compile the trainer. 
-- If the latest version is not working with your installation, it will try to select a compatible (but older) version. You can also use the `--branch` command switch to provide a specific trainer version to compile against. See existing [`branches`](https://github.com/sailro/EscapeFromTarkov-Trainer/branches).
+- If the latest version is not working with your installation, it will try to select a compatible (but older) version. You can also use the `--branch` command switch to provide a specific trainer version to compile against. See existing [`branches`](https://github.com/Orthrus88/EscapeFromTarkov-Trainer/branches).
 - Still not working? It will then try to disable faulting features.
 - No need for SDKs, third party dependencies or Visual Studio, the Installer is self-contained. 
 - Before EscapeFromTarkov `0.13.0.21531`, it should work for `live` (do not do that, you'll be detected & banned!).
@@ -36,7 +36,7 @@ This is an universal installer for the trainer. In most cases you just need to r
 - The game is stuck after installing the trainer : if you are using `SPT`, please make sure you have run the game at least once before installing the trainer. `SPT` is patching binaries during the first run, and we need to compile against those patched binaries. If you install this trainer on stock binaries, the game will freeze at the startup screen.
 - The trainer is not loaded : are you sure you are running the proper EFT instance? you can double check with the file `%LOCALAPPDATA%Low\Battlestate Games\EscapeFromTarkov\Player.log`, search for an installation path (often along with `Fallback handler could not load library` errors). Perhaps you forgot to update your shortcuts to `server.exe`/`launcher.exe` files.
 - The installer is unable to compile the trainer for an old EFT version : sorry I do not plan to support old versions, please upgrade.
-- The installer is unable to compile the trainer for a new EFT version : please file an [issue](https://github.com/sailro/EscapeFromTarkov-Trainer/issues/new/choose).
+- The installer is unable to compile the trainer for a new EFT version : please file an [issue](https://github.com/Orthrus88/EscapeFromTarkov-Trainer/issues/new/choose).
 
 ## Usage examples:
 - `Installer --help` to display general help.
@@ -47,6 +47,6 @@ This is an universal installer for the trainer. In most cases you just need to r
 - `Installer -c <command>` to disable a command. Example: `Installer -c Spawn`.
 - `Installer uninstall` to remove the trainer.
 - `Installer uninstall "C:\Battlestate Games\EFT"` to remove the trainer, adding `C:\Battlestate Games\EFT` to the search list.
-- `Installer -l <language>` to compile the trainer for a specific language (like `zh-cn` for Chinese simplified, `jp` for Japanese or `fr` for French). See the supported ones [here](https://github.com/sailro/EscapeFromTarkov-Trainer/tree/master/Properties).
+- `Installer -l <language>` to compile the trainer for a specific language (like `zh-cn` for Chinese simplified, `jp` for Japanese or `fr` for French). See the supported ones [here](https://github.com/Orthrus88/EscapeFromTarkov-Trainer/tree/master/Properties).
 
 [![Sponsor](https://img.shields.io/badge/sponsor-%E2%9D%A4-lightgrey?logo=github&style=flat-square)](https://github.com/sponsors/sailro)
