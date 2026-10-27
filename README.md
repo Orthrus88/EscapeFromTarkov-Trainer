@@ -1,7 +1,11 @@
 
 # EscapeFromTarkov-Trainer
 
-[![Sponsor](https://img.shields.io/badge/sponsor-%E2%9D%A4-lightgrey?logo=github&style=flat-square)](https://github.com/sponsors/sailro)
+[![Sponsor](https://img.shields.io/badge/sponsor-%E2%9D%A4-lightgrey?logo=github&style=flat-square)](https://github.com/sponsors/Orthrus88)
+
+## Credits
+
+Originally created by [sailro](https://github.com/sailro) and the contributors to [EscapeFromTarkov-Trainer](https://github.com/sailro/EscapeFromTarkov-Trainer). This fork is maintained by [Orthrus88](https://github.com/Orthrus88), who rebuilt and updated the trainer for newer EFT/SPT versions. The original license and copyright notices are preserved in [LICENSE](LICENSE).
 
 *I'm not responsible for any consequences that result from using this code. BattleState / BattlEye will ban you if you try to use it 'live'. Use it safely offline with [SPT](https://sp-tarkov.com/).*
 
